@@ -3,10 +3,16 @@ from django.http import HttpResponse,JsonResponse
 
 # Create your views here.
 
-def home_view(request):
-    return HttpResponse('<h1>Home Page</h1>')
+def index_view(request):
+    return render(request,'index.html')
 
-def home_json(request):
+def contact_view(request):
+    return render(request,'contact.html')
+
+def about_view(request):
+    return render(request,'about.html')
+
+def index_json(request):
     return JsonResponse({
         'status':'OK',
         'location':'home'
