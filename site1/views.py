@@ -4,13 +4,13 @@ from django.http import HttpResponse,JsonResponse
 # Create your views here.
 
 def index_view(request):
-    return render(request,'index.html')
+    return render(request,'site1/index.html')
 
 def contact_view(request):
-    return render(request,'contact.html')
+    return render(request,'site1/contact.html')
 
 def about_view(request):
-    return render(request,'about.html')
+    return render(request,'site1/about.html')
 
 def index_json(request):
     return JsonResponse({
