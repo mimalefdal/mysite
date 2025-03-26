@@ -5,9 +5,9 @@ from django.conf.urls.static import static
 from site1.views import *
 
 urlpatterns = [
-    path('', index_view),
-    path('contact/', contact_view),
-    path('about/', about_view),
+    path('', index_view, name='index'),
+    path('contact/', contact_view, name='contact'),
+    path('about/', about_view,name='about'),
     path('api/root/', index_json),
    
 ]
