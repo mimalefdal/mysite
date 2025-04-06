@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'site1.apps.Site1Config',
     'blog.apps.BlogConfig',
-    'one_page.apps.OnePageConfig'
+    'one_page.apps.OnePageConfig',
+    'cv.apps.CvConfig'
 ]
 
 MIDDLEWARE = [
