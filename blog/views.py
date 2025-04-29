@@ -11,7 +11,7 @@ def blog_view(request):
         return render(request,'blog/blog-home.html')
 
 
-def blog_single_view(request,id='0'):
+def blog_single_view(request,id):
         content={'id':id}
         return render(request,'blog/blog-single.html',content)
     

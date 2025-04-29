@@ -1,16 +1,13 @@
+{% load static %}
+
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>BlogIndex</title>
+    <title>BlogDev</title>
   </head>
   <body>
     {% for post in posts %}
-    <h1>{{ post.title }}</h1>
-    <small>{{ post.author }} </small>
-    <small>{{ post.date_posted }} </small>
-    <p>{{ post.content }}</p>
-
     <div class="single-post row">
       <div class="col-lg-3 col-md-3 meta-details">
         <ul class="tags">
@@ -39,7 +36,7 @@
         <div class="feature-img">
           <img class="img-fluid" src="img/blog/feature-img4.jpg" alt="" />
         </div>
-        <a class="posts-title" href="blog-single.html"
+        <a class="posts-title" href="{% url 'blog:single'  post.id  %}"
           ><h3>{{ post.title }}</h3></a
         >
         <p class="excert">
@@ -48,7 +45,9 @@
           money on boot camp when you can get the MCSE study materials yourself
           at a fraction.
         </p>
-        <a href="blog-single.html" class="primary-btn">View More</a>
+        <a href="{% url 'blog:single' post.id %}" class="primary-btn"
+          >View More</a
+        >
       </div>
     </div>
 
