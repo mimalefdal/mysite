@@ -63,7 +63,7 @@
       <div class="container main-menu">
         <div class="row align-items-center justify-content-between d-flex">
           <div id="logo">
-            <a href="{% url 'blog.index' %}"
+            <a href="{% url 'blog:index' %}"
               ><img src="{% static 'img/logo.png}" alt="" title=""
             /></a>
           </div>
@@ -75,7 +75,7 @@
                 <a href="{% url 'blog:index' %}">Blog</a>
                 <ul>
                   <li><a href="{% url 'blog:index' %}">Blog Home</a></li>
-                  <li><a href="{% url 'blog:single' %}">Blog Single</a></li>
+                  <li><a href="{% url 'blog:single' 15 %}">Blog Single</a></li>
                 </ul>
               </li>
               <li class="menu-has-children">
