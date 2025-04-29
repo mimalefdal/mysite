@@ -7,7 +7,9 @@ class Post(models.Model):
     author = models.CharField(max_length=200,default='unknown')
     content = models.TextField()
     date_posted = models.DateTimeField(default=timezone.now)
-    
+    date_published = models.DateTimeField(default=timezone.now)
+    published = models.BooleanField(default=False)
+    counted_view = models.IntegerField(default=0)
     def __str__(self):
         return self.title
 
