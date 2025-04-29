@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,get_object_or_404
 from blog.models import *
 
 # Create your views here.
@@ -12,6 +12,7 @@ def blog_view(request):
 
 
 def blog_single_view(request,id):
-        content={'id':id}
+        post = get_object_or_404(Post,id=id,published=True)
+        content={'post':post}
         return render(request,'blog/blog-single.html',content)
     
