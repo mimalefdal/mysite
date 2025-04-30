@@ -1,14 +1,18 @@
 from django.shortcuts import render,get_object_or_404
 from blog.models import *
+from django.utils import timezone
 
 # Create your views here.
 def blog_dev(request):
         posts = Post.objects.all()
+        posts = Post.objects.filter(date_published__lte=timezone.now())
         content = {'posts':posts}
         return render(request,'blog/dev.html',content)
 
 def blog_view(request):
-        return render(request,'blog/blog-home.html')
+        posts = Post.objects.filter(date_published__lte=timezone.now())
+        content = {'posts':posts}
+        return render(request,'blog/blog-home.html',content)
 
 
 def blog_single_view(request,id):
