@@ -16,7 +16,10 @@ def blog_view(request):
 
 
 def blog_single_view(request,id):
-        post = get_object_or_404(Post,id=id,published=True)
+        post = get_object_or_404(Post,id=id)
+
+        post.counted_view += 1
+        post.save()
+        
         content={'post':post}
         return render(request,'blog/blog-single.html',content)
-    
