@@ -3,12 +3,6 @@ from blog.models import *
 from django.utils import timezone
 
 # Create your views here.
-def blog_dev(request):
-        posts = Post.objects.all()
-        posts = Post.objects.filter(date_published__lte=timezone.now())
-        content = {'posts':posts}
-        return render(request,'blog/dev.html',content)
-
 def blog_view(request):
         posts = Post.objects.filter(date_published__lte=timezone.now())
         content = {'posts':posts}
@@ -16,7 +10,7 @@ def blog_view(request):
 
 
 def blog_single_view(request,id):
-        post = get_object_or_404(Post,id=id)
+        post = get_object_or_404(Post,id=id,published=True)
 
         post.counted_view += 1
         post.save()
